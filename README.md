@@ -1,7 +1,4 @@
 # Codepix
 ## Sobre o repositório
-Esse repositório contém todo código utilizado durante as aulas para referência.
 
-Faça seu fork e também nos dê uma estrelinha para nos ajudar a divulgar o projeto.
-
-As instruções de instalações estão no README.md de cada projeto.
+Bem-vindo ao CodePix, uma solução inovadora e eficiente para realizar transações financeiras instantâneas, inspirada no revolucionário sistema PIX. Desenvolvido com foco na simplicidade, segurança e velocidade, o PixClone oferece uma experiência de pagamento sem complicações, ideal para atender às necessidades modernas de transferências de dinheiro.
