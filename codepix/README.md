@@ -14,8 +14,6 @@ Utilizamos Docker para que todos os serviços que utilizaremos fiquem disponíve
 - Acesse o container da aplicação executando: `docker exec -it codepix_app bash`
 - Rode `go run cmd/codepix/main.go`
 
-**Importante:** Esse código está sendo disponibilizado conforme o andamento das aulas, logo, o arquivo para executar o projeto talvez ainda não tenha sido criado.
-
 ### Serviços utilizados ao executar o docker-compose
 
 - Aplicação principal
