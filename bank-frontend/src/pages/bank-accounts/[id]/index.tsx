@@ -1,51 +1,15 @@
 // @flow
-import * as React from "react";
-import Layout from "../../../components/Layout";
-import classes from "./BankAccountDashboard.module.scss";
-import Link, { LinkProps } from "next/link";
-import { BankAccountBalance } from "../../../components/BankAccountBalance";
 import { GetServerSideProps, NextPage } from "next";
-import { bankHttp } from "../../../util/http";
-import { BankAccount, Transaction } from "../../../model";
 import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
-import BankContext from "../../../context/BankContext";
-interface ActionLinkProps extends LinkProps {}
 
-const ActionLink: React.FunctionComponent<ActionLinkProps> = (props) => {
-  const { children, ...rest } = props;
-  const bank = React.useContext(BankContext);
-  return (
-    <Link {...rest}>
-      <a className={`${classes.actionLink} ${classes[bank.cssCode]}`}>{children}</a>
-    </Link>
-  );
-};
-interface HeaderProps {
-  bankAccount: BankAccount;
-}
-const Header: React.FunctionComponent<HeaderProps> = (props) => {
-  const { bankAccount } = props;
-  return (
-    <div className={`container ${classes.header}`}>
-      <BankAccountBalance balance={bankAccount.balance} />
-      <div className={classes.buttonActions}>
-        <ActionLink
-          href="/bank-accounts/[id]/pix/transactions/register"
-          as={`/bank-accounts/${bankAccount.id}/pix/transactions/register`}
-        >
-          Realizar transferência
-        </ActionLink>
-        <ActionLink
-          href={"/bank-accounts/[id]/pix/register"}
-          as={`/bank-accounts/${bankAccount.id}/pix/register`}
-        >
-          Cadastrar chave pix
-        </ActionLink>
-      </div>
-    </div>
-  );
-};
+import Layout from "../../../components/Layout";
+import { bankHttp } from "../../../util/http";
+import { BankAccount, Transaction } from "../../../model";
+
+import classes from "./BankAccountDashboard.module.scss";
+
+import Header from './_header'
 interface BankAccountDashboardProps {
   bankAccount: BankAccount;
   transactions: Transaction[];
